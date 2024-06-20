@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clashofclansgui.HelloController">
+    <Pane fx:id="paneInicio" layoutX="-2.0" prefHeight="700.0" prefWidth="1307.0" style="-fx-background-color: yellow; -fx-border-color: blue;" visible="false">
+        <children>
+            <TextField fx:id="txtfieldNombreUsuario" layoutX="446.0" layoutY="285.0" />
+            <Label layoutX="446.0" layoutY="255.0" text="NOMBRE DE USUARIO:">
+                <font>
+                    <Font name="Footlight MT Light" size="20.0" />
+                </font>
+            </Label>
+            <Label layoutX="351.0" layoutY="193.0" text="ANTES DE INICIAR PROPORCIONE LA INFORMACION INDICADA">
+                <font>
+                    <Font name="Footlight MT Light" size="22.0" />
+                </font>
+            </Label>
+            <Label layoutX="414.0" layoutY="63.0" text="BIENVENIDO A CLASH OF CLANS">
+                <font>
+                    <Font name="Footlight MT Light" size="34.0" />
+                </font>
+            </Label>
+            <Label layoutX="759.0" layoutY="247.0" text="GÉNERO:">
+                <font>
+                    <Font name="Footlight MT Light" size="15.0" />
+                </font>
+            </Label>
+            <RadioButton fx:id="sexoF" layoutX="755.0" layoutY="271.0" mnemonicParsing="false" onAction="#selectorSexoF" text="FEMENINO">
+                <font>
+                    <Font name="Footlight MT Light" size="15.0" />
+                </font>
+            </RadioButton>
+            <RadioButton fx:id="sexoM" layoutX="755.0" layoutY="304.0" mnemonicParsing="false" onAction="#selectorSexoM" text="MASCULINO">
+                <font>
+                    <Font name="Footlight MT Light" size="15.0" />
+                </font>
+            </RadioButton>
+            <Button layoutX="559.0" layoutY="390.0" mnemonicParsing="false" onAction="#Iniciar" prefHeight="83.0" prefWidth="181.0" style="-fx-background-color: YELLOW; -fx-border-color: RED;" text="CONTINUAR">
+                <font>
+                    <Font name="Footlight MT Light" size="25.0" />
+                </font>
+            </Button>
+            <Label layoutX="14.0" layoutY="603.0" prefHeight="83.0" prefWidth="160.0" text="NUCITA">
+                <font>
+                    <Font name="Viner Hand ITC" size="22.0" />
+                </font>
+            </Label>
+        </children>
+    </Pane>
+
+    <Pane fx:id="MenuPrincipal" layoutX="-2.0" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: yellow;" visible="false">
+        <children>
+            <Label layoutX="484.0" layoutY="14.0" text="CLASH OF CLANS">
+                <font>
+                    <Font name="Viner Hand ITC" size="37.0" />
+                </font>
+            </Label>
+            <Button layoutX="14.0" layoutY="215.0" mnemonicParsing="false" onAction="#IniciarJuego" prefHeight="10.0" prefWidth="108.0" style="-fx-background-color: orange;" text="INICIAR">
+                <font>
+                    <Font name="Viner Hand ITC" size="19.0" />
+                </font>
+            </Button>
+            <Button layoutX="15.0" layoutY="284.0" mnemonicParsing="false" onAction="#AbrirCreditos" prefHeight="51.0" prefWidth="108.0" style="-fx-background-color: orange;" text="CREDITOS">
+                <font>
+                    <Font name="Viner Hand ITC" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="btnCerrarJuego" layoutX="17.0" layoutY="433.0" mnemonicParsing="false" onAction="#cerrarAplicacion" prefHeight="51.0" prefWidth="103.0" style="-fx-background-color: red;" text="CERRAR">
+                <font>
+                    <Font name="Viner Hand ITC" size="16.0" />
+                </font>
+            </Button>
+            <Pane fx:id="PaneCreditos" layoutX="984.0" layoutY="484.0" prefHeight="200.0" prefWidth="302.0" style="-fx-background-color: #FFD700;" visible="false">
+                <children>
+                    <Label layoutX="14.0" layoutY="14.0" text="PROGRAMADORES:">
+                        <font>
+                            <Font name="Symbol" size="12.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="14.0" layoutY="31.0" text="Juan Carlos Romero Delgado 00128023" />
+                    <Label layoutX="14.0" layoutY="48.0" text="Jisya Alexander Rivas Marroquin 00211723" />
+                    <Label layoutX="14.0" layoutY="65.0" text="Gabriel Antonio Urquilla Zetino 00056122" />
+                    <Button layoutX="246.0" layoutY="150.0" mnemonicParsing="false" onAction="#CerrarCreditos" style="-fx-background-color: #FFD700;" text="X" textFill="#d21313">
+                        <font>
+                            <Font name="Tw Cen MT Condensed Extra Bold" size="21.0" />
+                        </font>
+                    </Button>
+                </children>
+            </Pane>
+            <Label fx:id="lblBienvenida" layoutX="547.0" layoutY="117.0" text="BIENVENIDO ">
+                <font>
+                    <Font name="Viner Hand ITC" size="16.0" />
+                </font>
+            </Label>
+            <Label fx:id="lblNombre" layoutX="673.0" layoutY="110.0">
+                <font>
+                    <Font name="Viner Hand ITC" size="19.0" />
+                </font>
+            </Label>
+            <Button layoutX="15.0" layoutY="359.0" mnemonicParsing="false" onAction="#Historia" prefHeight="51.0" prefWidth="108.0" style="-fx-background-color: orange;" text="HISTORIA">
+                <font>
+                    <Font name="Viner Hand ITC" size="16.0" />
+                </font>
+            </Button>
+        </children>
+    </Pane>
+
+    <Pane fx:id="Juego" layoutX="-2.0" prefHeight="700.0" prefWidth="1300.0">
+        <Button layoutX="14.0" layoutY="44.0" mnemonicParsing="false" onAction="#AbrirOpciones" text="OPCIONES">
+
+        </Button>
+        <Button layoutX="1198.0" layoutY="613.0" mnemonicParsing="false" onAction="#AbrirTienda" prefHeight="67.0" prefWidth="80.0">
+            <graphic>
+                <ImageView fitHeight="59.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../image/TIENDA.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <ImageView fitHeight="47.0" fitWidth="45.0" layoutX="1241.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../../../image/ORO.png" />
+        </ImageView>
+        <ImageView fitHeight="46.0" fitWidth="45.0" layoutX="1241.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../image/ELIXIR.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="46.0" fitWidth="45.0" layoutX="1241.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../image/GEMA.png" />
+            </image>
+        </ImageView>
+        <Button layoutX="14.0" layoutY="614.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="80.0">
+            <graphic>
+                <ImageView fitHeight="84.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../image/ATACAR_BP.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button layoutX="94.0" layoutY="636.0" mnemonicParsing="false" onAction="#AbrirCuartel">
+            <graphic>
+                <ImageView fitHeight="150.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../image/tropas.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Label layoutX="1212.0" layoutY="14.0" text="0">
+            <font>
+                <Font name="Franklin Gothic Book Italic" size="27.0" />
+            </font>
+        </Label>
+        <Label layoutX="1212.0" layoutY="60.0" text="0">
+            <font>
+                <Font name="Franklin Gothic Demi Italic" size="27.0" />
+            </font>
+        </Label>
+        <Label layoutX="1212.0" layoutY="115.0" text="0">
+            <font>
+                <Font size="27.0" />
+            </font>
+        </Label>
+        <Pane fx:id="opciones" layoutX="14.0" layoutY="43.0" prefHeight="140.0" prefWidth="231.0" style="-fx-background-color: blue;" visible="false">
+            <children>
+                <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#CerrarJuego" style="-fx-background-color: #87CEEB;" text="Salir">
+
+                </Button>
+                <Button layoutX="164.0" layoutY="14.0" mnemonicParsing="false" onAction="#CerrarOpciones" style="-fx-background-color: #87CEEB;" text="x">
+                    <font>
+                        <Font name="Viner Hand ITC" size="12.0" />
+                    </font>
+                </Button>
+            </children>
+        </Pane>
+        <TabPane fx:id="TPTienda" layoutX="782.0" layoutY="398.0" prefHeight="282.0" prefWidth="504.0" style="-fx-background-color: yellow;" tabClosingPolicy="UNAVAILABLE" visible="false">
+            <tabs>
+                <Tab text="RECURSOS">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="235.0" prefWidth="467.0">
+                            <children>
+                                <HBox fx:id="hboxMenuTienda" layoutX="1.0" layoutY="-2.0" prefHeight="256.0" prefWidth="504.0" style="-fx-background-color: yellow; -fx-border-color: black;">
+                                    <children>
+                                        <Pane prefHeight="244.0" prefWidth="113.0" style="-fx-border-color: black;">
+                                            <children>
+                                                <ImageView fitHeight="39.0" fitWidth="35.0" layoutX="12.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../../image/ELIXIR.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <Label layoutX="47.0" layoutY="46.0" text="100">
+
+                                                </Label>
+                                                <Button layoutX="14.0" layoutY="75.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="76.0">
+                                                    <graphic>
+                                                        <ImageView fitHeight="59.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@/image/minaOro.bmp" />
+                                                            </image>
+                                                        </ImageView>
+                                                    </graphic>
+                                                </Button>
+                                                <Label layoutX="13.0" layoutY="177.0" text="MINA DE ORO">
+
+                                                </Label>
+                                            </children>
+                                        </Pane>
+                                        <Pane prefHeight="113.0" prefWidth="107.0" style="-fx-border-color: black;">
+                                            <children>
+                                                <ImageView fitHeight="37.0" fitWidth="35.0" layoutX="2.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../../image/ELIXIR.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <Label layoutX="39.0" layoutY="48.0" text="1000">
+
+                                                </Label>
+                                                <Button layoutX="7.0" layoutY="75.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="90.0">
+                                                    <graphic>
+                                                        <ImageView fitHeight="58.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@../../../image/cuartel.bmp" />
+                                                            </image>
+                                                        </ImageView>
+                                                    </graphic>
+                                                </Button>
+                                                <Label layoutX="29.0" layoutY="178.0" text="CUARTEL">
+
+                                                </Label>
+                                            </children>
+                                        </Pane>
+                                        <Pane prefHeight="137.0" prefWidth="104.0" style="-fx-border-color: black;">
+                                            <children>
+                                                <ImageView fitHeight="39.0" fitWidth="36.0" layoutX="14.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../../image/ORO.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <Label layoutX="52.0" layoutY="40.0" prefHeight="33.0" prefWidth="36.0" text="5000">
+
+                                                </Label>
+                                                <Button layoutX="12.0" layoutY="75.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="84.0">
+                                                    <graphic>
+                                                        <ImageView fitHeight="62.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@../../../image/minaGemas.bmp" />
+                                                            </image>
+                                                        </ImageView>
+                                                    </graphic>
+                                                </Button>
+                                                <Label layoutX="39.0" layoutY="168.0" text="MINA" textAlignment="CENTER">
+
+                                                </Label>
+                                                <Label layoutX="26.0" layoutY="185.0" text="DE GEMAS">
+
+                                                </Label>
+                                            </children>
+                                        </Pane>
+                                        <Pane prefHeight="244.0" prefWidth="103.0" style="-fx-border-color: black;">
+                                            <children>
+                                                <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="13.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../../image/ORO.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <Label layoutX="52.0" layoutY="49.0" text="100">
+
+                                                </Label>
+                                                <Button layoutX="15.0" layoutY="75.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="76.0">
+                                                    <graphic>
+                                                        <ImageView fitHeight="77.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@/image/recolectorElixir.bmp" />
+                                                            </image>
+                                                        </ImageView>
+                                                    </graphic>
+                                                </Button>
+                                                <Label layoutX="16.0" layoutY="169.0" text="RECOLECTOR">
+
+                                                </Label>
+                                                <Label layoutX="23.0" layoutY="186.0" text="DE ELIXIR">
+
+                                                </Label>
+                                            </children>
+                                        </Pane>
+                                        <Button mnemonicParsing="false" onAction="#CerrarTienda" style="-fx-background-color: black;">
+                                            <graphic>
+                                                <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../../image/CANCELAR.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="DEFENSA">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <HBox layoutY="-1.0" prefHeight="254.0" prefWidth="504.0" style="-fx-background-color: yellow; -fx-border-color: black;">
+                                    <children>
+                                        <Pane prefHeight="251.0" prefWidth="160.0" style="-fx-background-color: yellow; -fx-border-color: black;">
+                                            <children>
+                                                <Button layoutX="40.0" layoutY="91.0" mnemonicParsing="false">
+                                                    <graphic>
+                                                        <ImageView fitHeight="81.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@../../../image/Cannon_lvl1.bmp" />
+                                                            </image>
+                                                        </ImageView>
+                                                    </graphic>
+                                                </Button>
+                                                <Label layoutX="59.0" layoutY="181.0" text="CAÑON" />
+                                                <Label layoutX="81.0" layoutY="65.0" text="1000" />
+                                                <ImageView fitHeight="39.0" fitWidth="36.0" layoutX="41.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../../image/ORO.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </children>
+                                        </Pane>
+                                        <Pane prefHeight="254.0" prefWidth="200.0" style="-fx-background-color: yellow; -fx-border-color: black;">
+                                            <children>
+                                                <Label layoutX="97.0" layoutY="52.0" text="1000" />
+                                                <ImageView fitHeight="39.0" fitWidth="36.0" layoutX="61.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../../image/ORO.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <Button layoutX="61.0" layoutY="79.0" mnemonicParsing="false" prefHeight="89.0" prefWidth="73.0">
+                                                    <graphic>
+                                                        <ImageView fitHeight="87.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@../../../image/Archer_Tower1.bmp" />
+                                                            </image>
+                                                        </ImageView>
+                                                    </graphic>
+                                                </Button>
+                                                <Label layoutX="43.0" layoutY="193.0" text="TORRE DE ARQUERAS" />
+                                            </children>
+                                        </Pane>
+                                        <Button mnemonicParsing="false" onAction="#CerrarTienda" prefHeight="50.0" prefWidth="52.0" style="-fx-background-color: black;">
+                                            <graphic>
+                                                <ImageView fitHeight="43.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../../image/CANCELAR.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <TabPane fx:id="TPTropas" layoutX="94.0" layoutY="364.0" prefHeight="314.0" prefWidth="397.0" style="-fx-background-color: yellow;" tabClosingPolicy="UNAVAILABLE" visible="false">
+            <tabs>
+                <Tab text="GENERAL">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <HBox fx:id="hboxMenuTropas1" layoutY="1.0" prefHeight="282.0" prefWidth="397.0" style="-fx-background-color: yellow;">
+                                    <children>
+                                        <Pane prefHeight="282.0" prefWidth="120.0" style="-fx-border-color: black;">
+                                            <children>
+                                                <Label layoutX="27.0" layoutY="206.0" text="BARBARO" />
+                                                <Button layoutX="17.0" layoutY="89.0" mnemonicParsing="false" prefHeight="105.0" prefWidth="63.0">
+                                                    <graphic>
+                                                        <ImageView fitHeight="97.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@../../../image/barbaro.bmp" />
+                                                            </image>
+                                                        </ImageView>
+                                                    </graphic>
+                                                </Button>
+                                                <Label layoutX="47.0" layoutY="55.0" text="100" />
+                                    <ImageView fitHeight="39.0" fitWidth="35.0" layoutX="7.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../image/ELIXIR.png" />
+                                       </image>
+                                    </ImageView>
+                                            </children>
+                                        </Pane>
+                                        <Pane prefHeight="282.0" prefWidth="126.0" style="-fx-border-color: black;">
+                                            <children>
+                                                <Label layoutX="44.0" layoutY="204.0" prefHeight="23.0" prefWidth="39.0" text="MAGO" />
+                                                <Button layoutX="19.0" layoutY="89.0" mnemonicParsing="false" prefHeight="105.0" prefWidth="88.0">
+                                                    <graphic>
+                                                        <ImageView fitHeight="97.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@../../../image/mago.bmp" />
+                                                            </image>
+                                                        </ImageView>
+                                                    </graphic>
+                                                </Button>
+                                                <Label layoutX="54.0" layoutY="55.0" text="1000" />
+                                    <ImageView fitHeight="39.0" fitWidth="35.0" layoutX="19.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../image/ELIXIR.png" />
+                                       </image>
+                                    </ImageView>
+                                            </children>
+                                        </Pane>
+                                        <Pane prefHeight="282.0" prefWidth="113.0" style="-fx-border-color: black;">
+                                            <children>
+                                    <ImageView fitHeight="39.0" fitWidth="35.0" layoutX="21.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../image/ELIXIR.png" />
+                                       </image>
+                                    </ImageView>
+                                                <Label layoutX="21.0" layoutY="207.0" text="ARQUERA" />
+                                                <Button layoutX="16.0" layoutY="89.0" mnemonicParsing="false" prefHeight="105.0" prefWidth="79.0">
+                                                    <graphic>
+                                                        <ImageView fitHeight="96.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@../../../image/arqueras.bmp" />
+                                                            </image>
+                                                        </ImageView>
+                                                    </graphic>
+                                                </Button>
+                                                <Label layoutX="57.0" layoutY="54.0" text="100" />
+                                            </children>
+                                        </Pane>
+                                        <Button mnemonicParsing="false" onAction="#CerrarCuartel" style="-fx-background-color: black;">
+                                            <graphic>
+                                                <ImageView fitHeight="21.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../../image/CANCELAR.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="DISPONIBLES">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="272.0" prefWidth="327.0">
+                            <children>
+                                <HBox fx:id="hboxMenuTropas" layoutY="1.0" prefHeight="282.0" prefWidth="397.0" style="-fx-background-color: yellow;">
+                                    <children>
+                                        <Pane prefHeight="282.0" prefWidth="120.0" style="-fx-border-color: black;">
+                                            <children>
+                                                <Label layoutX="27.0" layoutY="206.0" text="BARBARO">
+
+                                                </Label>
+                                                <Button layoutX="17.0" layoutY="89.0" mnemonicParsing="false" prefHeight="105.0" prefWidth="63.0">
+                                                    <graphic>
+                                                        <ImageView fitHeight="97.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@../../../image/barbaro.bmp" />
+                                                            </image>
+                                                        </ImageView>
+                                                    </graphic>
+                                                </Button>
+                                                <Label layoutX="18.0" layoutY="52.0" text="0/10" />
+                                            </children>
+                                        </Pane>
+                                        <Pane prefHeight="282.0" prefWidth="126.0" style="-fx-border-color: black;">
+                                            <children>
+                                                <Label layoutX="44.0" layoutY="204.0" prefHeight="23.0" prefWidth="39.0" text="MAGO">
+
+                                                </Label>
+                                                <Button layoutX="19.0" layoutY="89.0" mnemonicParsing="false" prefHeight="105.0" prefWidth="88.0">
+                                                    <graphic>
+                                                        <ImageView fitHeight="97.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@../../../image/mago.bmp" />
+                                                            </image>
+                                                        </ImageView>
+                                                    </graphic>
+                                                </Button>
+                                                <Label layoutX="19.0" layoutY="51.0" text="0/10" />
+                                            </children>
+                                        </Pane>
+                                        <Pane prefHeight="282.0" prefWidth="113.0" style="-fx-border-color: black;">
+                                            <children>
+                                                <Label layoutX="21.0" layoutY="207.0" text="ARQUERA">
+
+                                                </Label>
+                                                <Button layoutX="16.0" layoutY="89.0" mnemonicParsing="false" prefHeight="105.0" prefWidth="79.0">
+                                                    <graphic>
+                                                        <ImageView fitHeight="96.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@../../../image/arqueras.bmp" />
+                                                            </image>
+                                                        </ImageView>
+                                                    </graphic>
+                                                </Button>
+                                                <Label layoutX="16.0" layoutY="52.0" text="0/10" />
+                                            </children>
+                                        </Pane>
+                                        <Button mnemonicParsing="false" onAction="#CerrarCuartel" style="-fx-background-color: black;">
+                                            <graphic>
+                                                <ImageView fitHeight="21.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../../image/CANCELAR.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+      <GridPane layoutX="229.0" layoutY="202.0" style="-fx-border-color: black;">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button mnemonicParsing="false" text="Button" />
+         </children>
+      </GridPane>
+      
+      
+
+    </Pane>
+    <Pane fx:id="Historia" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #2F2F2F; -fx-border-color: red;" visible="false">
+        <children>
+            <Label fx:id="lblHistoria1" layoutX="23.0" layoutY="20.0" textFill="WHITE">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Label>
+            <Label fx:id="lblHistoria2" layoutX="23.0" layoutY="50.0" textFill="WHITE">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Label>
+            <Label fx:id="lblHistoria3" layoutX="23.0" layoutY="80.0" textFill="WHITE">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Label>
+            <Label fx:id="lblHistoria4" layoutX="22.0" layoutY="120.0" textFill="WHITE">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Label>
+            <Label fx:id="lblHistoria5" layoutX="22.0" layoutY="150.0" textFill="WHITE">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Label>
+            <Label fx:id="lblHistoria6" layoutX="22.0" layoutY="180.0" textFill="WHITE">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Label>
+            <Label fx:id="lblHistoria7" layoutX="22.0" layoutY="220.0" textFill="WHITE">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Label>
+            <Label fx:id="lblHistoria8" layoutX="22.0" layoutY="260.0" textFill="WHITE">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Label>
+
+            <Button fx:id="btnLore1" layoutX="14.0" layoutY="620.0" mnemonicParsing="false" onAction="#contarHistoria1" prefHeight="67.0" prefWidth="149.0" style="-fx-background-color: BLACK;" text="CONTINUAR" textFill="RED">
+                <font>
+                    <Font name="Tempus Sans ITC" size="18.0" />
+                </font>
+            </Button>
+            <Button fx:id="btnLore2" layoutX="14.0" layoutY="622.0" mnemonicParsing="false" onAction="#contarHistoria2" prefHeight="64.0" prefWidth="149.0" style="-fx-background-color: BLACK;" text="CONTINUAR" textFill="RED" visible="false">
+                <font>
+                    <Font name="Tempus Sans ITC" size="18.0" />
+                </font>
+            </Button>
+            <Button fx:id="btnLore3" layoutX="14.0" layoutY="619.0" mnemonicParsing="false" onAction="#contarHistoria3" prefHeight="67.0" prefWidth="149.0" style="-fx-background-color: BLACK;" text="CONTINUAR" textFill="RED" visible="false">
+                <font>
+                    <Font name="Tempus Sans ITC" size="18.0" />
+                </font>
+            </Button>
+            <Button fx:id="btnLore4" layoutX="14.0" layoutY="622.0" mnemonicParsing="false" onAction="#contarHistoria4" prefHeight="64.0" prefWidth="149.0" style="-fx-background-color: BLACK;" text="CONTINUAR" textFill="RED" visible="false">
+                <font>
+                    <Font name="Tempus Sans ITC" size="18.0" />
+                </font>
+            </Button>
+            <Button fx:id="btnLore5" layoutX="14.0" layoutY="622.0" mnemonicParsing="false" onAction="#contarHistoria5" prefHeight="64.0" prefWidth="149.0" style="-fx-background-color: BLACK;" text="CONTINUAR" textFill="RED" visible="false">
+                <font>
+                    <Font name="Tempus Sans ITC" size="18.0" />
+                </font>
+            </Button>
+            <Button fx:id="btnLore6" layoutX="14.0" layoutY="622.0" mnemonicParsing="false" onAction="#contarHistoria6" prefHeight="64.0" prefWidth="149.0" style="-fx-background-color: BLACK;" text="CONTINUAR" textFill="RED" visible="false">
+                <font>
+                    <Font name="Tempus Sans ITC" size="18.0" />
+                </font>
+            </Button>
+            <Button fx:id="btnLore7" layoutX="14.0" layoutY="622.0" mnemonicParsing="false" onAction="#contarHistoria7" prefHeight="64.0" prefWidth="149.0" style="-fx-background-color: BLACK;" text="CONTINUAR" textFill="RED" visible="false">
+                <font>
+                    <Font name="Tempus Sans ITC" size="18.0" />
+                </font>
+            </Button>
+
+            <Button fx:id="btnSalirLore" layoutX="1187.0" layoutY="636.0" mnemonicParsing="false" onAction="#volverJuego" prefHeight="51.0" prefWidth="99.0" style="-fx-background-color: BLACK;" text="SALIR" textFill="RED">
+                <font>
+                    <Font name="Tempus Sans ITC" size="21.0" />
+                </font>
+            </Button>
+        </children>
+    </Pane>
+</Pane>
